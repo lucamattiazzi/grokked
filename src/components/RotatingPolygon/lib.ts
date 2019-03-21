@@ -108,8 +108,8 @@ export class World {
   }
 
   draw = () => {
-    const angle = Math.sin(Date.now() / 10000) * Math.PI
-    const polygons = [[3, 0], [3, angle]] as [number, number][]
+    const angle = Math.sin(Date.now() / 100000) * Math.PI
+    // const polygons = [[3, 0], [3, angle]] as [number, number][]
     this.reset()
     this.drawCircle()
     // polygons.forEach(([sides, delta]) => {
