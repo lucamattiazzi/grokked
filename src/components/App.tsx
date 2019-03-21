@@ -23,7 +23,7 @@ const Footer = () => (
 export class App extends React.Component {
   render() {
     return (
-      <div className="w-100 h-100 flex flex-column items-center relative">
+      <div className="w-100 h-100 flex flex-column items-center relative bg-light-gray">
         <Header />
         <RotatingPolygon />
         <Footer />

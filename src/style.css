@@ -7,3 +7,11 @@ body,
   font-family: 'Roboto Mono',
     monospace;
 }
+
+.pointer-events-none {
+  pointer-events: none;
+}
+
+.break-word {
+  word-wrap: break-word
+}
