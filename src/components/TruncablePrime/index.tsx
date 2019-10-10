@@ -1,5 +1,5 @@
 import Worker from 'worker-loader!./lib.worker'
-import React, { createRef, RefObject, useEffect } from 'react'
+import React, { useEffect } from 'react'
 
 export function TruncablePrime() {
   useEffect(() => {
