@@ -1,37 +1,24 @@
-import * as React from 'react'
+import React, { createRef, RefObject, useEffect } from 'react'
 import { World } from './lib'
 
-export class RotatingPolygon extends React.Component {
-  canvas: React.RefObject<HTMLCanvasElement> = React.createRef()
-  world: World
+export function RotatingPolygon() {
+  const canvas: RefObject<HTMLCanvasElement> = createRef()
+  let world: World
 
-  componentDidMount() {
-    this.world = new World(this.canvas.current)
+  useEffect(() => {
+    world = new World(canvas.current)
+    return world.destroy
+  }, [])
+
+  const handleClick = () => world && world.toggleDrawing()
+
+  const canvasStyle = {
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
   }
 
-  componentWillUnmount() {
-    this.world.destroy()
-  }
-
-  handleClick = () => {
-    this.world.toggleDrawing()
-  }
-
-  render() {
-    const canvasStyle = {
-      top: '50%',
-      left: '50%',
-      transform: 'translate(-50%, -50%)',
-    }
-    return (
-      <div className="w-100 h-100 relative">
-        <canvas
-          className="absolute pointer"
-          style={canvasStyle}
-          ref={this.canvas}
-          onClick={this.handleClick}
-        />
-      </div>
-    )
-  }
+  return (
+    <canvas className="absolute pointer" style={canvasStyle} ref={canvas} onClick={handleClick} />
+  )
 }

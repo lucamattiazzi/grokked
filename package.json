@@ -1,7 +1,7 @@
 {
   "name": "grokked",
   "private": true,
-  "version": "0.1.0",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "start": "accurapp-scripts start",
@@ -20,6 +20,7 @@
     ]
   },
   "devDependencies": {
+    "@types/d3": "^5.7.2",
     "@types/lodash": "^4.14.123",
     "@types/react": "^16.8.8",
     "@types/react-dom": "^16.8.3",
@@ -33,11 +34,13 @@
   "dependencies": {
     "@accurat/tachyons-lite": "^1.0.4",
     "d3": "^5.9.2",
+    "is-prime": "^1.0.1",
     "lodash": "^4.17.11",
     "modern-normalize": "^0.5.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "tachyons": "^4.11.1",
-    "tachyons-extra": "^1.1.2"
+    "tachyons-extra": "^1.1.2",
+    "worker-loader": "^2.0.0"
   }
 }
