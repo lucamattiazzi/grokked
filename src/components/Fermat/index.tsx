@@ -35,8 +35,17 @@ export function Fermat() {
   }
 
   return (
-    <>
-      <input value={power} type="range" min={MIN} max={MAX} step={DELTA} onChange={handleChange} />
+    <div className="relative w-100 h-100">
+      <input
+        value={power}
+        type="range"
+        min={MIN}
+        max={MAX}
+        step={DELTA}
+        onChange={handleChange}
+        className="top-3 absolute"
+        style={{ transform: 'translate(-50%, -50%)', left: '50%' }}
+      />
       <canvas
         width={SIZE}
         height={SIZE}
@@ -45,6 +54,6 @@ export function Fermat() {
         ref={canvas}
       />
       <div>{power}</div>
-    </>
+    </div>
   )
 }

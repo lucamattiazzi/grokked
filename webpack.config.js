@@ -10,4 +10,9 @@ const workerLoader = () => {
     })
 }
 
-module.exports = buildWebpackConfig([typescript({ silent: true }), workerLoader()])
+module.exports = {
+  ...buildWebpackConfig([typescript({ silent: true }), workerLoader()]),
+  output: {
+    globalObject: 'this',
+  },
+}

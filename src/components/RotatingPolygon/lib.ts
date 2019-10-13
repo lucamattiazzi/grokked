@@ -147,6 +147,7 @@ export class World {
   }
 
   draw = () => {
+    if (!this.drawing) return
     const angle = Math.sin(Date.now() / 100000) * Math.PI
     // const polygons = [[3, 0], [3, angle]] as [number, number][]
     this.reset()
@@ -156,7 +157,6 @@ export class World {
     // })
     // this.drawIntersections(polygons)
     this.drawMagicPolygon(angle, angle)
-    if (!this.drawing) return
     window.requestAnimationFrame(this.draw)
   }
 
