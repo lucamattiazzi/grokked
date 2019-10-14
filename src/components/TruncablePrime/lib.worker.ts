@@ -2,6 +2,8 @@ const ctx: Worker = self as any
 
 const isPrime = require('is-prime')
 
+console.log('maronn')
+
 interface TreeNode {
   value: number
   children: TreeNode[]
@@ -39,3 +41,7 @@ ctx.addEventListener('message', event => {
   console.log('maronn')
   ctx.postMessage(JSON.stringify({ ciao: 3 }))
 })
+
+ctx.onmessage = () => console.log('ciao')
+
+ctx.postMessage(JSON.stringify({ ciao: 3 }))

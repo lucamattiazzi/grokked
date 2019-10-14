@@ -19,6 +19,11 @@ export function RotatingPolygon() {
   }
 
   return (
-    <canvas className="absolute pointer" style={canvasStyle} ref={canvas} onClick={handleClick} />
+    <canvas
+      className="absolute pointer absolute--fill"
+      style={canvasStyle}
+      ref={canvas}
+      onClick={handleClick}
+    />
   )
 }

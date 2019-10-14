@@ -36,13 +36,11 @@ export function App() {
 
   function nextPage() {
     const nextIdx = (currentComponent + 1) % PAGES.length
-    console.log('nextIdx', nextIdx)
     setCurrent(nextIdx)
   }
 
   function previousPage() {
     const nextIdx = (PAGES.length - 1 + currentComponent - 1) % (PAGES.length - 1)
-    console.log('nextIdx', nextIdx)
     setCurrent(nextIdx)
   }
 

@@ -33,6 +33,8 @@
   },
   "dependencies": {
     "@accurat/tachyons-lite": "^1.0.4",
+    "@webpack-blocks/webpack": "^2.0.1",
+    "babel-loader": "^8.0.6",
     "d3": "^5.9.2",
     "is-prime": "^1.0.1",
     "lodash": "^4.17.11",
@@ -41,6 +43,7 @@
     "react-dom": "^16.8.4",
     "tachyons": "^4.11.1",
     "tachyons-extra": "^1.1.2",
+    "webpack": "^4.41.1",
     "worker-loader": "^2.0.0"
   }
 }
