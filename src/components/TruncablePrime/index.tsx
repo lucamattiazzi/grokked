@@ -1,9 +1,8 @@
-import Worker from 'worker-loader!./lib.worker'
 import React, { useEffect } from 'react'
 
 export function TruncablePrime() {
   useEffect(() => {
-    const worker = new Worker()
+    const worker = new Worker('prime.js')
     console.log(worker)
     worker.onmessage = e => {
       console.log(e.data)
@@ -13,8 +12,6 @@ export function TruncablePrime() {
     }
     worker.postMessage(JSON.stringify({ base: 10 }))
   }, [])
-
-  console.log('maronn!!')
 
   return <div className="absolute absolute--fill">CIAO</div>
 }

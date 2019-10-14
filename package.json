@@ -24,16 +24,17 @@
     "@types/lodash": "^4.14.123",
     "@types/react": "^16.8.8",
     "@types/react-dom": "^16.8.3",
+    "@webpack-blocks/webpack": "^2.0.1",
     "accurapp-scripts": "^4.0.11",
     "babel-preset-accurapp": "^4.0.10",
     "eslint-config-accurapp": "^4.2.1",
     "typescript": "^3.3.4000",
+    "webpack": "^4.41.1",
     "webpack-blocks-ts": "^2.0.1",
     "webpack-preset-accurapp": "^4.1.14"
   },
   "dependencies": {
     "@accurat/tachyons-lite": "^1.0.4",
-    "@webpack-blocks/webpack": "^2.0.1",
     "babel-loader": "^8.0.6",
     "d3": "^5.9.2",
     "is-prime": "^1.0.1",
@@ -42,8 +43,6 @@
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "tachyons": "^4.11.1",
-    "tachyons-extra": "^1.1.2",
-    "webpack": "^4.41.1",
-    "worker-loader": "^2.0.0"
+    "tachyons-extra": "^1.1.2"
   }
 }
