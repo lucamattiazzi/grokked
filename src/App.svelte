@@ -16,7 +16,7 @@
     {/each}
   </Router>
   <Footer />
-  <!-- {#if $inspectorOpen}
+  {#if $inspectorOpen}
     <Inspector />
-  {/if} -->
+  {/if}
 </div>
