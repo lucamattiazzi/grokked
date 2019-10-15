@@ -1,9 +1,4 @@
-function getIntersectionPoints(
-  radius: number,
-  sides: number,
-  firstDelta: number,
-  secondDelta: number
-): { angle: number; distance: number }[] {
+function getIntersectionPoints(radius, sides, firstDelta, secondDelta) {
   // I wish I could draw how I got to this, but cannot do it here
   // It's a simple enough formula, no way to explain here
   // trust me, this works
@@ -35,56 +30,54 @@ function getIntersectionPoints(
   return points
 }
 
-function pointsDist(from: [number, number], to: [number, number]) {
+function pointsDist(from, to) {
   return Math.sqrt(Math.pow(from[0] - to[0], 2) + Math.pow(from[1] - to[1], 2))
 }
 
 export class World {
-  canvas: HTMLCanvasElement
-  drawing: boolean = true
-
-  constructor(canvas: HTMLCanvasElement) {
+  constructor(canvas) {
+    this.drawing = true
     this.canvas = canvas
     this.resize()
     this.draw()
-    // window.addEventListener('resize', this.resize)
+    window.addEventListener('resize', this.resize)
   }
 
-  get size(): number {
+  get size() {
     return Math.min(this.canvas.parentElement.clientWidth, this.canvas.parentElement.clientHeight)
   }
 
-  get radius(): number {
+  get radius() {
     return this.size / 3
   }
 
-  get center(): [number, number] {
+  get center() {
     const x = this.canvas.width / 2
     const y = this.canvas.height / 2
     return [x, y]
   }
 
-  get ctx(): CanvasRenderingContext2D {
+  get ctx() {
     return this.canvas.getContext('2d')
   }
 
-  resize = () => {
+  resize() {
     this.canvas.width = this.size
     this.canvas.height = this.size
     this.canvas.style.width = `${this.size}px`
     this.canvas.style.height = `${this.size}px`
   }
 
-  toggleDrawing = () => {
+  toggleDrawing() {
     this.drawing = !this.drawing
     if (this.drawing) this.draw()
   }
 
-  reset = () => {
+  reset() {
     this.ctx.clearRect(0, 0, this.size, this.size)
   }
 
-  drawCircle = () => {
+  drawCircle() {
     const ctx = this.canvas.getContext('2d')
     const [x, y] = this.center
     ctx.beginPath()
@@ -92,7 +85,7 @@ export class World {
     ctx.stroke()
   }
 
-  drawPolygon = (sides: number, alpha: number) => {
+  drawPolygon(sides, alpha) {
     const rotAngle = (Math.PI * 2) / sides
     this.ctx.beginPath()
     for (let i = 0; i < sides + 1; i++) {
@@ -107,10 +100,10 @@ export class World {
     this.ctx.stroke()
   }
 
-  drawMagicPolygon = (sides: number, alpha: number) => {
+  drawMagicPolygon(sides, alpha) {
     const rotAngle = (Math.PI * 2) / sides
     this.ctx.beginPath()
-    const points = [] as [number, number][]
+    const points = []
     while (true) {
       // yeah why not
       const angle = rotAngle * points.length + alpha
@@ -127,7 +120,7 @@ export class World {
     this.ctx.stroke()
   }
 
-  drawIntersections = (polygons: [number, number][]) => {
+  drawIntersections(polygons) {
     const sides = polygons[0][0]
     const firstDelta = polygons[0][1]
     const secondDelta = polygons[1][1]
@@ -149,18 +142,13 @@ export class World {
   draw = () => {
     if (!this.drawing) return
     const angle = Math.sin(Date.now() / 100000) * Math.PI
-    // const polygons = [[3, 0], [3, angle]] as [number, number][]
     this.reset()
     this.drawCircle()
-    // polygons.forEach(([sides, delta]) => {
-    //   this.drawPolygon(sides, delta)
-    // })
-    // this.drawIntersections(polygons)
     this.drawMagicPolygon(angle, angle)
     window.requestAnimationFrame(this.draw)
   }
 
-  destroy = () => {
+  destroy() {
     this.drawing = false
   }
 }

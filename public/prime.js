@@ -35,7 +35,7 @@ function createTree(base) {
   }
   addAllNumbers(tree)
   const ratio = base / numberLength(highest, base)
-  return tree
+  return { highest, tree, ratio }
 }
 
 self.addEventListener('message', event => {
@@ -43,5 +43,3 @@ self.addEventListener('message', event => {
   const tree = createTree(base)
   self.postMessage(JSON.stringify(tree))
 })
-
-self.postMessage(JSON.stringify({ ciao: 3 }))
