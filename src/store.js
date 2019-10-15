@@ -22,7 +22,8 @@ export const routes = [
     path: '/fermat-remainders',
     component: Fermat,
     name: 'Fermat Remainders',
-    description: 'It shows the distance for each point from a perfect trine of numbers',
+    description:
+      'Once set a power value, for each couple of integers [x, y] computes the error between the sum of the numbers elevated to the power and the nearest integer root (base power) of the result. In base 2 there are many white spots, the pythagorean triplets, any other base should have no white spots.',
   },
 ]
 
