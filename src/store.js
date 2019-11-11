@@ -1,7 +1,15 @@
-import { readable, derived, writable } from 'svelte/store'
+import { readable, get } from 'svelte/store'
 import Truncable from './components/Truncable/index.svelte'
 import Rotating from './components/Rotating/index.svelte'
 import Fermat from './components/Fermat/index.svelte'
+
+const HEADER_CYCLE_DELAY = 5000
+
+export const titles = [
+  'Dada-driven developer',
+  "It's buggier on the inside",
+  "Stuff I'm learning to play with",
+]
 
 export const routes = [
   {
@@ -42,3 +50,13 @@ function checkForInspector(setter) {
 }
 
 export const inspectorOpen = readable(false, checkForInspector)
+
+export const headerIdx = readable(0, cycleHeaders)
+
+function cycleHeaders(setter) {
+  setTimeout(() => {
+    const current = get(headerIdx)
+    setter((current + 1) % titles.length)
+    cycleHeaders(setter)
+  }, HEADER_CYCLE_DELAY)
+}
