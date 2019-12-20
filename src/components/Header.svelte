@@ -10,8 +10,8 @@
   }
 </style>
 
-<div class="w-100 relative flex pt3 pb4 items-center">
-  <div class="pl3 flex flex-column w-50">
+<div class="w-100 relative flex pt3 pb2 items-center flex-column justify-center ph3">
+  <div class="flex flex-column w-100 tc pb5">
     <Link href="/" class="f1 no-underline black">Grokked it!</Link>
     <div class="f4 relative">
       {#each titles as title, idx}
@@ -21,24 +21,30 @@
       {/each}
     </div>
   </div>
-  <div class="pl3 flex w-50 justify-center justify-around">
-    <div class="flex flex-column justify-around items-center">
-      <a href="https://github.com/yeasteregg" target="_blank" rel="noopener noreferrer">
-        <img src="/github.png" width="32" height="32" alt="githublogo" />
-      </a>
+  <div class="flex w-100 tc justify-center">
+    <a
+      href="https://github.com/yeasteregg"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="ph2 flex flex-column justify-around items-center no-underline black">
+      <img src="/github.png" width="32" height="32" alt="githublogo" />
       <div>Github</div>
-    </div>
-    <div class="flex flex-column justify-around items-center grayscale">
-      <a href="https://recently.grokked.it" target="_blank" rel="noopener noreferrer">
-        <img src="/favicon.png" width="32" height="32" alt="grokkedlogo" />
-      </a>
+    </a>
+    <a
+      href="https://recently.grokked.it"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="ph2 flex flex-column justify-around items-center grayscale no-underline black">
+      <img src="/favicon.png" width="32" height="32" alt="grokkedlogo" />
       <div>Recently Grokked</div>
-    </div>
-    <div class="flex flex-column justify-around items-center grayscale">
-      <a href="https://giove.grokked.it" target="_blank" rel="noopener noreferrer">
-        <img src="/jupyter.png" width="32" height="32" alt="jupyterlogo" />
-      </a>
+    </a>
+    <a
+      href="https://giove.grokked.it"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="ph2 flex flex-column justify-around items-center grayscale no-underline black">
+      <img src="/jupyter.png" width="32" height="32" alt="jupyterlogo" />
       <div>Jupyter</div>
-    </div>
+    </a>
   </div>
 </div>

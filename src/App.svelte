@@ -6,7 +6,14 @@
   import Inspector from './components/Inspector.svelte'
 </script>
 
-<div class="w-100 h-100 flex flex-column items-center relative bg-light-gray">
+<style>
+  .open-sans {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+  }
+</style>
+
+<div class="w-100 h-100 flex flex-column items-center relative bg-light-gray open-sans">
   <Header />
   <Router>
     <Route path="" component={Home} exact />
@@ -15,6 +22,6 @@
     {/each}
   </Router>
   {#if $inspectorOpen}
-    <Inspector />
+    <!-- <Inspector /> -->
   {/if}
 </div>
