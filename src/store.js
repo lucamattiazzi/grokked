@@ -3,12 +3,15 @@ import Truncable from './components/Truncable/index.svelte'
 import Rotating from './components/Rotating/index.svelte'
 import Fermat from './components/Fermat/index.svelte'
 
+const { random, floor } = Math
+
 const HEADER_CYCLE_DELAY = 5000
 
 export const titles = [
   'Dada-driven developer',
   "It's buggier on the inside",
   "Stuff I'm learning to play with",
+  "Less than 4 elements, it's not a real list",
 ]
 
 export const routes = [
@@ -51,7 +54,7 @@ function checkForInspector(setter) {
 
 export const inspectorOpen = readable(false, checkForInspector)
 
-export const headerIdx = readable(0, cycleHeaders)
+export const headerIdx = readable(floor(random() * titles.length), cycleHeaders)
 
 function cycleHeaders(setter) {
   setTimeout(() => {
