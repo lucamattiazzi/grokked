@@ -5,7 +5,7 @@
       <a class="no-underline blue" target="_blank" href="https://svelte.dev/">SVELTE!</a>
     </h3>
     I suggest you head to
-    <a class="no-underline blue" target="_blank" href="https://github.com/YeasterEgg">
+    <a class="no-underline blue" target="_blank" href="https://github.com/lucamattiazzi">
       my Github Page
     </a>
     , you can find the code there.

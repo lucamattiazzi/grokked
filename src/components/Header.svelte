@@ -23,7 +23,7 @@
   </div>
   <div class="flex w-100 tc justify-center">
     <a
-      href="https://github.com/yeasteregg"
+      href="https://github.com/lucamattiazzi"
       target="_blank"
       rel="noopener noreferrer"
       class="ph2 flex flex-column justify-around items-center no-underline black">
