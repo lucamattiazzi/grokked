@@ -22,6 +22,6 @@
     {/each}
   </Router>
   {#if $inspectorOpen}
-    <!-- <Inspector /> -->
+    <Inspector />
   {/if}
 </div>
